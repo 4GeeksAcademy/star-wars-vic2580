@@ -1,19 +1,7 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			],
-			favs: [],
+			favs : []
 		},
 		actions: {
 			addFavs : (fav) => {
@@ -21,7 +9,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			removeFavs : (fav) => {
 				let newFavs = getStore().favs.filter((favorite, index) => {
-					return favorite != fav
+					return favorite !== fav
 				})
 				setStore({favs: newFavs})
 			},

@@ -1,29 +1,51 @@
-import React , {useState, useEffect, useContext} from 'react'
-import { Context } from '../store/appContext'
-import { useParams } from 'react-router'
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router";
 
-export default function CharacterDescription() {
-  const {id} = useParams()
-  const [character, setCharacter] = useState({});
-  const {store, actions} = useContext(Context);
+export default function CharacterDecription() {
+  const { id } = useParams();
+  const [info, setInfo] = useState({});
 
-  useEffect (() => {
-    async function getCharacter() {
-      let response = await fetch(`https://www.swapi.tech/api/people/${id}`)
+  useEffect(() => {
+    async function getInfo() {
+      let response = await fetch(`https://www.swapi.tech/api/people/${id}`);
       let data = await response.json();
-      setCharacter(data.result.properties);
+      setInfo(data.result);
     }
-    getCharacter()
+
+    getInfo();
   }, [id]);
-  console.log(character)
 
   return (
-    <div>
-      <h1>{character.name}</h1>
-      <p>Gender: {character.gender}</p>
-      <p>Hair Color: {character.hair_color}</p>
-      <p>Height: {character.height}</p>
-      <p>Birth Year: {character.birth_year}</p>
+    <div className="charCard d-flex justify-content-center my-auto">
+      <div className="card mb-5" style={{ "background-color": "transparent" }}>
+        <div className="row g-0">
+          <div className="col-md-3">
+            <img
+              src={`https://starwars-visualguide.com/assets/img/characters/${info.uid}.jpg`}
+              className="object-fit-fill rounded"
+            />
+          </div>
+          <div className="col-md-8">
+            <div
+              className="card-body"
+              style={{ float: "right", "padding-left": "100px" }}
+            >
+              <h1 className=" charName">{info.properties?.name}</h1>
+              <p className="card-text">Gender: {info.properties?.gender}</p>
+              <p className="card-text">
+                Birth Year: {info.properties?.birth_year}
+              </p>
+              <p className="card-text">
+                {/* API has a typo */}
+                Hair Color: {info.properties?.hair_color}
+              </p>
+              <p className="card-text">
+                Eye color: {info.properties?.eye_color}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  )
+  );
 }

@@ -1,3 +1,152 @@
-/* 
-    General Styles
-*/
+/* Add a Star Wars-style font */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* Space-like background */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Press Start 2P', sans-serif;
+  background: black;
+  color: #f0e130;
+  height: 100vh;
+}
+
+
+.navbar {
+    background-color: #1a1a1a;
+    border-bottom: 1px solid #888;
+  }
+  
+  .navbar-brand img {
+    width: 120px;
+  }
+  
+  .navbar .btn {
+    background-color: #f7c200;
+    color: #000;
+  }
+  
+  .navbar .dropdown-menu {
+    background-color: #333;
+  }
+  
+  .navbar .dropdown-item {
+    color: #fff;
+  }
+  
+  .navbar .dropdown-item:hover {
+    background-color: #444;
+  }
+  
+  /* Footer Styling */
+  .footer {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .footer span {
+    font-size: 1rem;
+    color: #f7c200;
+  }
+
+  .navbar .fa-3x {
+    color: #f7c200;
+  }
+  
+  /* Dropdown Styling */
+.dropdown-menu-end {
+    background-color: #fff;
+  }
+  
+  .dropdown-menu-end .dropdown-item {
+    color: #fff;
+  }
+  
+  .dropdown-menu-end .dropdown-item:hover {
+    background-color: #444;
+  }
+.navbar .dropdown-toggle .fa-3x {
+    color: #000;
+  }
+
+/* Styling for cards */
+.card {
+  border: 2px solid #f0e130;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #f0e130;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #f0e130;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+  box-shadow: 0 0 40px #f0e130;
+}
+
+/* Buttons styled like Star Wars panels */
+.btn-warning {
+  background-color: #f0e130;
+  color: black;
+  border: 2px solid #f0e130;
+  font-weight: bold;
+  text-shadow: 0 0 5px black;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-warning:hover {
+  background-color: black;
+  color: #f0e130;
+}
+
+/* Image styling */
+img {
+  border-radius: 10px;
+  border: 2px solid #f0e130;
+  box-shadow: 0 0 15px #f0e130;
+}
+
+/* Headings styled like Star Wars text */
+h1, h5 {
+  font-family: 'Press Start 2P', sans-serif;
+  color: #f0e130;
+  text-shadow: 0 0 10px black;
+}
+
+/* Links styled as glowing buttons */
+a {
+  text-decoration: none;
+  color: #f0e130;
+}
+
+a:hover {
+  text-shadow: 0 0 10px #f0e130;
+}
+
+/* Footer or additional text */
+.card-text {
+  font-size: 14px;
+  color: #ddd;
+}
+
+/* Scrollbar styling for overflow content */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: black;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f0e130;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ffdd57;
+}
+
